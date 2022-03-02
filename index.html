@@ -9,7 +9,20 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <h1>Rock paper scisors</h1>
-    <h2>Check the console</h2>
+    <section class="scoreCont">
+        <div class="scoreBorder">
+            <div class="scoreBg">
+                <label class="scoreLabel" for="score"><h3>score</h3></label>
+                <h2 id="score" class="scoreCounter">0</h2>
+            </div>
+        </div>
+    </section>
+    <main class="mainCont">
+        <section class="playCont">
+            <button class="playOption" data-key="paper" id="playBttn"><img src="./images/icon-paper.svg"  alt="paper" srcset=""></button>
+            <button class="playOption" data-key="scisors" id="playBttn"><img src="./images/icon-scissors.svg"  alt="scissors" srcset=""></button>
+            <button class="playOption" data-key="rock" id="playBttn"><img src="./images/icon-rock.svg"  alt="rock" srcset=""></button>
+        </section>
+    </main>
 </body>
 </html>

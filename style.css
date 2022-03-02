@@ -1,7 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+/* Barlow */
+:root {
+    /* colors */
+    --scisorsGrad: hsl(39, 89%, 49%);
+    --paperGrad: hsl(230, 89%, 62%);
+    --rockGrad: hsl(349, 71%, 52%);
+
+    --backgroundRad: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%)) ;
+
+    /* Font stuff */
+    --darkText: hsl(229, 25%, 31%);
+    --scoreText: hsl(229, 64%, 46%);
+    --headerOutline: hsl(217, 16%, 45%);
+
+    --BarlowSemo: 'Barlow Semi Censored', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--BarlowSemo);
+    overflow: hidden;
+}
 body {
+    background: var(--backgroundRad);
+    background-repeat: no-repeat;
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.scoreCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+}
+.scoreBorder {
+    border: 2px solid grey;  
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+.scoreBg{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 15px;
+    padding-inline: 2.5rem;
+    text-align: center;
+}
+.scoreLabel {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--scoreText);
+}
+.scoreCounter {
+    font-size: 3.5rem;
+    color: var(--darkText);
+}
+.mainCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.playCont {
+    display: grid;
+    grid-template-columns: repeat(2,30vw);
+    grid-template-rows: 500px;
+    place-items: center;
+    align-items: center;
+}
+.mainCont .playOption:last-child {
+    grid-column:  1 / span 2;
+}
+
+.playOption img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 3em;
+}
+.playOption {
+    background-color: red;
+    border-radius: 50%;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* for javascript use */
+
+.clicked {
+    box-shadow: 0px 0px 50px red;
+    transition: box-shadow 0.1s ease-in-out;
+}
+.unClicked {
+    box-shadow: 0px 0px 0px red;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.jsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(128, 128, 128, 0.165);
+
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.jsDisplayResult {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
     flex-direction: column;
-    background-color: wheat;
 }
