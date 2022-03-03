@@ -14,4 +14,8 @@ Simple rock papers scisors game i made as a warm up to getting back into javascr
 
 ## To  change
 Add a score board at the bottom of the page to keep track of win/loose history
+make mobile friendly
 
+## Live preview
+Live preview at 
+https://00nx6.github.io/rock-paper-scisors/
