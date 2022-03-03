@@ -13,7 +13,9 @@ Simple rock papers scisors game i made as a warm up to getting back into javascr
 
 
 ## To  change
-Add a score board at the bottom of the page to keep track of win/loose history
+1. Add a score board at the bottom of the page to keep track of win/loose history
+
+## Resolution support
 smallest screen resolution support : 350x650
 
 
