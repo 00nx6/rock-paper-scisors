@@ -11,6 +11,11 @@
 <body>
     <section class="scoreCont">
         <div class="scoreBorder">
+            <div class="availableOptions">
+                <h3 data-key="rock">Rock</h3>
+                <h3 data-key="paper">Paper</h3>
+                <h3 data-key="scissors">Scissors</h3>
+            </div>
             <div class="scoreBg">
                 <label class="scoreLabel" for="score"><h3>score</h3></label>
                 <h2 id="score" class="scoreCounter">0</h2>
@@ -19,10 +24,11 @@
     </section>
     <main class="mainCont">
         <section class="playCont">
-            <button class="playOption" data-key="paper" id="playBttn"><img src="./images/icon-paper.svg"  alt="paper" srcset=""></button>
-            <button class="playOption" data-key="scisors" id="playBttn"><img src="./images/icon-scissors.svg"  alt="scissors" srcset=""></button>
+            <button class="playOption paper" data-key="paper" id="playBttn"><img src="./images/icon-paper.svg"  alt="paper" srcset=""></button>
+            <button class="playOption scissors" data-key="scissors" id="playBttn"><img src="./images/icon-scissors.svg"  alt="scissors" srcset=""></button>
             <button class="playOption" data-key="rock" id="playBttn"><img src="./images/icon-rock.svg"  alt="rock" srcset=""></button>
         </section>
     </main>
-</body>
+    
+    </body>
 </html>
