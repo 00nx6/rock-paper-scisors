@@ -10,7 +10,6 @@ const display = document.createElement('div');
 const resultCont = document.createElement('div');
 const flavourText = document.createElement('h2')
 const close = document.createElement('button');
-const result = document.createElement('h1');
 let results = {}
 
 // function for assigning player choice and some style.
@@ -51,7 +50,6 @@ function headerGlow(header) {
 }
 // removes the color from the header
 function removeHeaderColor(header) {
-    console.log(header)
     header.target.classList.add('unHeaderGlow')
     header.target.classList.remove('headerGlow')
     header.target.style.color = `white`
@@ -109,15 +107,15 @@ function popup(results) {
     flavourText.classList.add('jsFlavourText');
     display.classList.add('jsDisplayResult');
     close.classList.add('jsCloseBttn', 'close');
-    result.classList.add('result');
-    close.innerText = "Close"
+
+    close.innerText = "X"
 
     // winner will be displayed
     flavourText.innerText = `${results.message}`
-    result.innerText = `${results.winner}`
+
+
     resultCont.append(close)
     resultCont.append(flavourText)
-    resultCont.append(result)
     
     display.append(resultCont)
     container.append(display)
@@ -145,6 +143,3 @@ function scoreCounter(winner, player) {
     }
     score.innerText = scoreCount
 }
-
-
-

@@ -31,9 +31,9 @@ make an if statement to determine who wins that is run when a button is clicked
 
 ## to change
 
-change color of the things so they each have an individual colour
-fix icons being cut off
+<!-- change color of the things so they each have an individual colour -->
+<!-- fix icons being cut off -->
 Style close bttn
 
-Add in the rock paper scisors title at the top
-make the text glow based on comp choice
+<!-- Add in the rock paper scisors title at the top -->
+<!-- make the text glow based on comp choice -->

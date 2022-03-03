@@ -84,8 +84,7 @@ body {
 }
 
 .playOption img {
-    background-color: white;
-    border-radius: 50%;
+
     height: 150px;
     width: 150px;
     padding: 2rem;
@@ -97,7 +96,8 @@ body {
     background-color: var(--scissorsGrad);
 }
 .playOption {
-    background-color: red;
+    background-color: var(--rockGrad);
+    border-radius: 0%;
     border-radius: 50%;
     padding: 1rem;
     border: none;
@@ -138,4 +138,26 @@ body {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+}
+.jsResultCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.jsFlavourText {
+    text-transform: capitalize;
+}
+.jsCloseBttn {
+    margin-block: 0.5rem;
+    cursor: pointer;
+    color: grey;
+    line-height: 8px;
+    background-color: white;
+    font-weight: 900;
+    padding: 0.5rem;
+    background-color: none;
+    border-radius: 50%;
+    border: 1px grey solid;
+    align-self: flex-end;
 }
