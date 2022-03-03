@@ -75,7 +75,7 @@ body {
 .playCont {
     display: grid;
     grid-template-columns: repeat(2,30vw);
-    grid-template-rows: 500px;
+    grid-template-rows: 40vh;
     place-items: center;
     align-items: center;
 }
@@ -160,4 +160,29 @@ body {
     border-radius: 50%;
     border: 1px grey solid;
     align-self: flex-end;
+}
+
+/* media queries */
+
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 12px;
+    }
+    .playCont {
+        grid-template-columns: repeat(2, 50vw);
+    }
+}
+@media screen and (max-width: 600px) {
+    .scoreBorder {
+        flex-direction: column;
+        padding: 1.5rem;
+        width: fit-content;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-height: 745px) {
+    .playCont{
+        grid-template-rows: 30vh;
+    } 
 }
