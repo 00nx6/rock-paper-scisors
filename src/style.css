@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+/* Barlow */
+:root {
+    /* colors */
+    --scissorsGrad: hsl(39, 89%, 49%);
+    --paperGrad: hsl(230, 89%, 62%);
+    --rockGrad: hsl(349, 71%, 52%);
+
+    --backgroundRad: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%)) ;
+
+    /* Font stuff */
+    --darkText: hsl(229, 25%, 31%);
+    --scoreText: hsl(229, 64%, 46%);
+    --headerOutline: hsl(217, 16%, 45%);
+
+    --BarlowSemo: 'Barlow Semi Censored', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--BarlowSemo);
+}
+body {
+    background: var(--backgroundRad);
+    background-repeat: no-repeat;
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.scoreCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+}
+.scoreBorder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    border: 2px solid grey;  
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+.availableOptions {
+    color: white;
+    font-size: 1.6rem;
+}
+.scoreBg{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 15px;
+    padding-inline: 2.5rem;
+    text-align: center;
+}
+.scoreLabel {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--scoreText);
+}
+.scoreCounter {
+    font-size: 3.5rem;
+    color: var(--darkText);
+}
+.mainCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.playCont {
+    display: grid;
+    grid-template-columns: repeat(2,30vw);
+    grid-template-rows: 40vh;
+    place-items: center;
+    align-items: center;
+}
+.mainCont .playOption:last-child {
+    grid-column:  1 / span 2;
+}
+
+.playOption img {
+
+    height: 150px;
+    width: 150px;
+    padding: 2rem;
+}
+.playOption.paper {
+    background-color: var(--paperGrad)
+}
+.playOption.scissors {
+    background-color: var(--scissorsGrad);
+}
+.playOption {
+    background-color: var(--rockGrad);
+    border-radius: 0%;
+    border-radius: 50%;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* for javascript use */
+
+.clicked {
+    transition: box-shadow 0.1s ease-in-out;
+}
+.unClicked {
+    transition: box-shadow 0.1s ease-in-out;
+}
+.headerGlow {
+    transition: color 0.2s ease-out;
+}
+.unHeaderGlow {
+    transition: color 0.2s ease-in;
+}   
+.jsContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(128, 128, 128, 0.097);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jsDisplayResult {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.jsResultCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.jsFlavourText {
+    text-transform: capitalize;
+}
+.jsCloseBttn {
+    margin-block: 0.5rem;
+    cursor: pointer;
+    color: grey;
+    line-height: 8px;
+    background-color: white;
+    font-weight: 900;
+    padding: 0.5rem;
+    background-color: none;
+    border-radius: 50%;
+    border: 1px grey solid;
+    align-self: flex-end;
+}
+
+/* media queries */
+
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 12px;
+    }
+    .playCont {
+        grid-template-columns: repeat(2, 50vw);
+    }
+}
+@media screen and (max-width: 600px) {
+    .scoreBorder {
+        flex-direction: column;
+        padding: 1.5rem;
+        width: fit-content;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-height: 745px) {
+    .playCont{
+        grid-template-rows: 30vh;
+    } 
+}
