@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
 /* Barlow */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
 :root {
     /* colors */
     --scissorsGrad: hsl(39, 89%, 49%);
@@ -16,173 +23,116 @@
     --BarlowSemo: 'Barlow Semi Censored', sans-serif;
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--BarlowSemo);
-}
 body {
     background: var(--backgroundRad);
-    background-repeat: no-repeat;
-    width: auto;
-    height: 100vh;
+    max-height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.scoreCont {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 20px;
-}
-.scoreBorder {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
-    border: 2px solid grey;  
-    border-radius: 18px;
-    padding: 1.5rem;
-}
-.availableOptions {
-    color: white;
-    font-size: 1.6rem;
-}
-.scoreBg{
-    background-color: white;
-    padding: 1rem;
+    border: 5px var(--headerOutline) solid;
     border-radius: 15px;
-    padding-inline: 2.5rem;
-    text-align: center;
-}
-.scoreLabel {
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--scoreText);
-}
-.scoreCounter {
-    font-size: 3.5rem;
-    color: var(--darkText);
-}
-.mainCont {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.playCont {
-    display: grid;
-    grid-template-columns: repeat(2,30vw);
-    grid-template-rows: 40vh;
-    place-items: center;
-    align-items: center;
-}
-.mainCont .playOption:last-child {
-    grid-column:  1 / span 2;
-}
-
-.playOption img {
-
-    height: 150px;
-    width: 150px;
     padding: 2rem;
+    margin: 3rem;
 }
-.playOption.paper {
-    background-color: var(--paperGrad)
+.title h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: var(--BarlowSemo);
+    color: white;
+    line-height: 1.8rem;
 }
-.playOption.scissors {
+.scoreCont {
+    background-color: white;
+    /* padding: 2rem; */
+    margin: 0;
+    border-radius: 0.5rem;
+    font-family: var(--BarlowSemo);
+    text-align: center;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+
+}
+.scoreHead {
+    color: var(--scoreText);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    line-height: 0rem;
+}
+.score {
+    font-size: 4rem;
+    line-height: 3.5rem;
+}
+
+.gameCont {
+    display: grid;
+    grid-template-columns: repeat(2, .5fr);
+    grid-template-rows: repeat(2, .5fr);
+    background-image: url(./images/bg-triangle.svg);
+    background-position: center;
+    background-size: 27rem;
+    background-repeat: no-repeat;
+}
+
+.optionBorder {
     background-color: var(--scissorsGrad);
+    padding: 3rem;
 }
-.playOption {
-    background-color: var(--rockGrad);
-    border-radius: 0%;
+
+.paper, .scissors, .rock {
+    justify-self: center;
     border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    /* object-fit: fill; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.optionImage {
+    box-shadow: inset 0px 5px rgba(128, 128, 128, 0.438);
+    background-color: white;
+    display: inline-block;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    flex-shrink: 0;
     padding: 1rem;
-    border: none;
-    cursor: pointer;
+    object-fit:scale-down;
+}
+.rock {
+    grid-column: span 2;
 }
 
-/* for javascript use */
-
-.clicked {
-    transition: box-shadow 0.1s ease-in-out;
-}
-.unClicked {
-    transition: box-shadow 0.1s ease-in-out;
-}
-.headerGlow {
-    transition: color 0.2s ease-out;
-}
-.unHeaderGlow {
-    transition: color 0.2s ease-in;
-}   
-.jsContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(128, 128, 128, 0.097);
-
+.rulesCont {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-.jsDisplayResult {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-}
-.jsResultCont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.jsFlavourText {
-    text-transform: capitalize;
-}
-.jsCloseBttn {
-    margin-block: 0.5rem;
+.rulesBttn {
+    font-family: var(--BarlowSemo);
     cursor: pointer;
-    color: grey;
-    line-height: 8px;
-    background-color: white;
-    font-weight: 900;
-    padding: 0.5rem;
-    background-color: none;
-    border-radius: 50%;
-    border: 1px grey solid;
-    align-self: flex-end;
+    background-color: transparent;
+    color: white;
+    border: 2px white solid;
+    padding-inline: 3rem;
+    padding-block: .5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    max-width: min-content;
+    border-radius: 1rem;
+    margin-bottom: 5rem;
 }
 
-/* media queries */
-
-@media screen and (max-width: 750px) {
-    html {
-        font-size: 12px;
-    }
-    .playCont {
-        grid-template-columns: repeat(2, 50vw);
-    }
-}
-@media screen and (max-width: 600px) {
-    .scoreBorder {
-        flex-direction: column;
-        padding: 1.5rem;
-        width: fit-content;
-        gap: 1rem;
-    }
-}
-
-@media screen and (max-height: 745px) {
-    .playCont{
-        grid-template-rows: 30vh;
-    } 
-}
+.rules {
+    display: none;
+ }

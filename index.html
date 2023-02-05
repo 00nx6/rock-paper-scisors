@@ -4,31 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock paper scisors | console</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
+    <title>Rock paper Scissors</title>
 </head>
 <body>
-    <section class="scoreCont">
-        <div class="scoreBorder">
-            <div class="availableOptions">
-                <h3 data-key="rock">Rock</h3>
-                <h3 data-key="paper">Paper</h3>
-                <h3 data-key="scissors">Scissors</h3>
+    <header>
+        <section class="title">
+            <h2>rock</h2>
+            <h2>paper</h2>
+            <h2>scissors</h2>
+        </section>
+        <section class="scoreCont">
+            <label for="score" class="scoreHead">score</label>
+            <h2 class="score" id="score">0</h2>
+        </section>
+    </header>
+    <main>
+        <section class="gameCont"> 
+            <div data-key="paper" class="paper optionBorder blue">
+                <img src="./images/icon-paper.svg" alt="" class="optionImage">
             </div>
-            <div class="scoreBg">
-                <label class="scoreLabel" for="score"><h3>score</h3></label>
-                <h2 id="score" class="scoreCounter">0</h2>
+            <div data-key="scissors" class="scissors optionBorder yellow">
+                <img src="./images/icon-scissors.svg" alt="" class="optionImage">
             </div>
-        </div>
-    </section>
-    <main class="mainCont">
-        <section class="playCont">
-            <button class="playOption paper" data-key="paper" id="playBttn"><img src="./images/icon-paper.svg"  alt="paper" srcset=""></button>
-            <button class="playOption scissors" data-key="scissors" id="playBttn"><img src="./images/icon-scissors.svg"  alt="scissors" srcset=""></button>
-            <button class="playOption" data-key="rock" id="playBttn"><img src="./images/icon-rock.svg"  alt="rock" srcset=""></button>
+            <div data-key="rock" class="rock optionBorder red">
+                <img src="./images/icon-rock.svg" alt="" class="optionImage">
+            </div>
         </section>
     </main>
-    
-    </body>
+    <div class="rulesCont">
+        <button class="rulesBttn">
+            rules
+        </button>
+
+    </div>
+    <div class="rules">
+        <img src="./images/image-rules.svg" alt="">
+    </div>
+</body>
 </html>
